@@ -1,3 +1,35 @@
+/*home*/
+document.addEventListener('scroll', throttle(parallaxEffect, 16));
+
+function parallaxEffect() {
+    const scrollY = window.scrollY;
+    const stars = document.getElementById('stars');
+    const moon = document.getElementById('moon');
+    const mountainsBehind = document.getElementById('mountains_behind');
+    const mountainsFront = document.getElementById('mountains_front');
+    const homeData = document.getElementById('home__data');
+
+    stars.style.top = `${scrollY * 0.2}px`;
+    moon.style.top = `${scrollY * 1}px`;
+    mountainsBehind.style.top = `${scrollY * 0.2}px`;
+    mountainsFront.style.top = `${scrollY * 0.1}px`;
+
+    homeData.style.transform = `translateY(${scrollY * 0.5}px)`;
+    homeData.style.opacity = 1 - (scrollY / 400);
+    
+}
+
+function throttle(fn, wait) {
+    let time = Date.now();
+    return function() {
+        if ((time + wait - Date.now()) < 0) {
+            fn();
+            time = Date.now();
+        }
+    };
+}
+
+
 /* About Section Animation */
 document.addEventListener('DOMContentLoaded', function() {
     const aboutSection = document.querySelector('#about');
