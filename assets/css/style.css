@@ -43,8 +43,8 @@
 @media screen and (max-width: 1024px) {
     :root {
         --biggest-font-size: 2rem;
-        --h1-font-size: 1rem;
-        --h2-font-size: 1.5rem;
+        --h1-font-size: 1.5rem;
+        --h2-font-size: 1.25rem;
         --h3-font-size: 1.125rem;
         --normal-font-size: .938rem;
         --small-font-size: .813rem;
@@ -115,7 +115,7 @@ input{
 }
 
 .section{
-    padding: 3.5rem 0 2rem;
+    padding: 3rem 0 2rem;
 }
 
 .section__title{
@@ -229,73 +229,26 @@ input{
 .main{
     margin-left: 100px;
 }
-.home {
+.home{
+    background: url('../img/wp7453733-portfolio-wallpapers.png');
+    background-size: cover;
+    background-position: center center;
     height: 100vh;
-    position: relative;
-    z-index: 1;
-    overflow: hidden;
-    background: linear-gradient(to bottom, #2b1055, #7597de);
 }
 
-#stars, #moon, #mountains_behind, #mountains_front {
-    position: absolute;
-    width: 100%;
-    height: auto;
-    transition: top 0.3s ease-out;
-}
-
-#stars {
-    top: 0;
-    left: 0;
-    z-index: 1; /* Ensure this is above the gradient background */
-    opacity: 0.8;
-}
-
-#moon {
-    top: 2%;
-    left: 50%;
-    transform: translateX(-50%);
-    mix-blend-mode: screen;
-    z-index: 2;
-}
-
-#mountains_behind {
-    bottom: 5%;
-    left: 0;
-    z-index: 3;
-}
-
-#mountains_front {
-    bottom: 0;
-    left: 0;
-    z-index: 4;
-}
-
-.home__data {
-    margin-top: 10%;
-    position: relative;
-    z-index: 5;
-    transition: transform 0.5s ease-out, opacity 0.5s ease-out;
-}
-
-.home__container {
+.home__container{
     position: relative;
     height: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
     align-items: center;
 }
 
 .home__social{
     position: absolute;
-    top: 1rem;
+    top: 1.8rem;
     left: 0;
     display: flex;
     align-items: center;
     column-gap: 3.5rem;
-    z-index: 10;
-    background: none;
 }
 
 .home__social-follow{
@@ -319,10 +272,9 @@ input{
 }
 
 .home__social-link{
-    font-size: 1.08rem; /* Ensure the font size is appropriate */
+    font-size: 1.08rem;
     color: var(--text-color);
     transition: .3s;
-    pointer-events: auto;
 }
 
 .home__social-link:hover{
@@ -334,36 +286,62 @@ input{
 }
 
 .home__title{
-    font-size: 4rem;
-    font-weight: 5rem;
+    font-size: var(--biggest-font-size);
 }
 
 .home__subtitle{
-    font-size: 2rem;
-    font-weight: 3rem;
+    font-size: var(--h3-font-size);
+    font-weight: var(--font-medium);
     margin-bottom: var(--mb-0-75);
 }
 
 .home__description{
     max-width: 450px;
-    font-weight: 3rem;
     margin-bottom: var(--mb-2);
 }
 
-.button {
+.my__info{
+    display: flex;
+    column-gap: 1.8rem;
+    position: absolute;
+    left: 0;
+    bottom: 1.8rem;
+}
+
+.info__item{
+    display: flex;
+    align-items: center;
+}
+
+.info__title,
+.info__subtitle{
+    font-size: var(--small-font-size);
+}
+
+.info__title{
+    font-weight: var(--font-medium);
+}
+
+.info__icon{
+    font-size: 1.8rem;
+    color: var(--skin-color);
+    margin-right: var(--mb-0-75);
+}
+
+.button{
     display: inline-flex;
     align-items: center;
-    column-gap: .5rem;
+    column-gap: 1rem;
     background-color: var(--skin-color);
     color: var(--title-color);
-    padding: .75rem 2rem;
+    padding: .75rem 1.4rem;
     border-radius: .25rem;
     font-weight: var(--font-medium);
     position: relative;
     z-index: 1;
 }
 
-.button::after {
+.button::after{
     position: absolute;
     content: '';
     left: 0;
@@ -378,45 +356,13 @@ input{
     transition: .3s;
 }
 
-.button:hover::after {
+.button:hover::after{
     transform: scale(1);
 }
 
-.button__icon {
+.button__icon{
     font-size: 1.25rem;
 }
-
-.my__info {
-    display: flex;
-    column-gap: 1.8rem;
-    position: absolute;
-    left: 0;
-    bottom: 1.5rem;
-    z-index: 6; /* Ensure it is above other elements */
-    background-color: none; /* Optional: Background to make icons stand out */
-}
-
-
-.info__item {
-    display: flex;
-    align-items: center;
-}
-
-.info__title,
-.info__subtitle {
-    font-size: var(--small-font-size);
-}
-
-.info__title {
-    font-weight: var(--font-medium);
-}
-
-.info__icon {
-    font-size: 1.8rem; /* Make sure the font-size is appropriate */
-    color: var(--skin-color); /* Ensure the color is set correctly */
-    margin-right: var(--mb-0-75); /* Ensure margin-right is not hiding the icon */
-}
-
 /* start jelly animation*/
 /* jelly animation */
 
@@ -468,8 +414,9 @@ input{
 }
 
 .about__info{
+    display: grid;
     grid-template-columns: repeat(3, 140px);
-    column-gap: .5rem;
+    column-gap: 1rem;
     margin-bottom: var(--mb-3);
 }
 
@@ -585,13 +532,13 @@ input{
 .image-popup {
     position: fixed;
     top: 50%;
-    right: 100px;
+    right: 200px;
     transform: translateY(-50%);
     display: none;
 }
 
 .image-popup img {
-    max-width: 400px;
+    max-width: 300px;
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
 }
