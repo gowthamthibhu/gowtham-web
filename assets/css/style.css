@@ -43,8 +43,8 @@
 @media screen and (max-width: 1024px) {
     :root {
         --biggest-font-size: 2rem;
-        --h1-font-size: 1rem;
-        --h2-font-size: 1.5rem;
+        --h1-font-size: 1.5rem;
+        --h2-font-size: 1.25rem;
         --h3-font-size: 1.125rem;
         --normal-font-size: .938rem;
         --small-font-size: .813rem;
@@ -98,9 +98,6 @@ button{
     cursor: pointer;
 }
 
-/* Existing styles */
-
-
 button,
 input{
     border:none;
@@ -118,7 +115,7 @@ input{
 }
 
 .section{
-    padding: 3.5rem 0 2rem;
+    padding: 3rem 0 2rem;
 }
 
 .section__title{
@@ -127,42 +124,6 @@ input{
     margin-bottom: var(--mb-3);
 }
 
-/* Parallax effect */
-.parallax {
-    background-attachment: scroll; /* Disable fixed background on small screens */
-}
-
-/* Responsive styles for mobile phones in portrait view */
-@media (max-width: 768px) {
-    .container {
-        max-width: 100%;
-        padding: 0 1rem;
-    }
-
-    .section {
-        padding: 2rem 0 1rem;
-    }
-
-    .section__title {
-        font-size: var(--h2-font-size);
-        margin-bottom: var(--mb-2);
-    }
-
-    .grid {
-        display: block;
-    }
-
-    button,
-    input {
-        width: 100%;
-        margin-bottom: 1rem;
-    }
-    /* Remove background image for smaller screens */
-    .parallax {
-        background-image: none;
-        background-attachment: scroll; /* Ensure background is not fixed */
-    }
-}
 .section__title::before{
     content: attr(data-heading);
     display: block;
@@ -268,93 +229,34 @@ input{
 .main{
     margin-left: 100px;
 }
-.home {
+.home{
+    background: url('../img/wp7453733-portfolio-wallpapers.png');
+    background-size: cover;
+    background-position: center center;
     height: 100vh;
-    position: relative;
-    z-index: 1;
-    overflow: hidden;
-    background: linear-gradient(to bottom, #2b1055, #7597de);
 }
 
-#stars, #moon, #mountains_behind, #mountains_front {
-    position: absolute;
-    width: 100%;
-    height: auto;
-    transition: top 0.3s ease-out;
-}
-
-#stars {
-    top: 0;
-    left: 0;
-    z-index: 1; /* Ensure this is above the gradient background */
-    opacity: 0.8;
-}
-
-#moon {
-    top: 2%;
-    left: 50%;
-    transform: translateX(-50%);
-    mix-blend-mode: screen;
-    z-index: 2;
-}
-
-#mountains_behind {
-    bottom: 5%;
-    left: 0;
-    z-index: 3;
-}
-
-#mountains_front {
-    bottom: 0;
-    left: 0;
-    z-index: 4;
-}
-
-/* Responsive styles for portrait view on screens with a max width of 738px */
-@media (max-width: 738px) {
-    .home {
-        background: linear-gradient(to bottom, #2b1055, #7597de); /* Keep the gradient background */
-    }
-
-    #stars, #moon, #mountains_behind, #mountains_front {
-        display: none; /* Hide the parallax elements */
-    }
-    
-}
-
-.home__data {
-    margin-top: 10%;
-    position: relative;
-    z-index: 5;
-    transition: transform 0.5s ease-out, opacity 0.5s ease-out;
-}
-
-.home__container {
+.home__container{
     position: relative;
     height: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
     align-items: center;
 }
 
-.home__social {
+.home__social{
     position: absolute;
-    top: 1rem;
+    top: 1.8rem;
     left: 0;
     display: flex;
     align-items: center;
     column-gap: 3.5rem;
-    z-index: 10;
-    background: none;
 }
 
-.home__social-follow {
+.home__social-follow{
     font-weight: var(--font-medium);
     position: relative;
 }
 
-.home__social-follow::after {
+.home__social-follow::after{
     content: '';
     position: absolute;
     width: 1rem;
@@ -364,118 +266,82 @@ input{
     top: 50%;
 }
 
-.home__social-links {
+.home__social-links{
     display: inline-flex;
     column-gap: 1rem;
 }
 
-.home__social-link {
-    font-size: 1.08rem; /* Ensure the font size is appropriate */
+.home__social-link{
+    font-size: 1.08rem;
     color: var(--text-color);
     transition: .3s;
-    pointer-events: auto;
 }
 
-.home__social-link:hover {
+.home__social-link:hover{
     transform: translateY(.25rem);
-}
-
-/* Responsive styles for portrait view on screens with a max width of 738px */
-@media (max-width: 738px) {
-    .home__social {
-        top: 0.5rem; /* Adjust top position for smaller screens */
-        left: 50%; /* Center align horizontally */
-        transform: translateX(-50%); /* Center align horizontally */
-        flex-direction: row; /* Stack items vertically */
-        row-gap: 3rem; /* Add gap between items */
-        }
-
-    .home__social-follow::after {
-        right: -50%; /* Adjust position if needed */
-    }
-
-    .home__social-links {
-        flex-direction: row; /* Stack links vertically */
-        row-gap: 0.5rem; /* Add gap between links */
-        column-gap: 0; /* Remove horizontal gap */
-    }
-
-    .home__social-link {
-        font-size: 1rem; /* Adjust font size for smaller screens */
-    }
 }
 
 .home__img{
     display: none;
 }
 
-.home__title {
-    font-size: 4rem;
-    font-weight: 5rem;
+.home__title{
+    font-size: var(--biggest-font-size);
 }
 
-.home__subtitle {
-    font-size: 2rem;
-    font-weight: 3rem;
+.home__subtitle{
+    font-size: var(--h3-font-size);
+    font-weight: var(--font-medium);
     margin-bottom: var(--mb-0-75);
 }
 
-.home__description {
+.home__description{
     max-width: 450px;
-    font-weight: 3rem;
     margin-bottom: var(--mb-2);
 }
 
-/* Responsive styles for portrait view on screens with a max width of 738px */
-@media (max-width: 738px) {
-    .home__title {
-        font-size: 2.3rem; /* Adjust font size for smaller screens */
-        font-weight: 4rem;
-        padding-left: 10px; /* Adjust font weight if needed */
-    }
-
-    .home__subtitle {
-        font-size: 1.5rem; /* Adjust font size for smaller screens */
-        font-weight: 2.5rem; /* Adjust font weight if needed */
-        margin-bottom: var(--mb-0-5);
-        padding-left: 10px; /* Adjust margin if needed */
-    }
-
-    .home__description {
-        max-width: 100%; /* Make sure it fits within the screen */
-        font-weight: 2.5rem; /* Adjust font weight if needed */
-        margin-bottom: var(--mb-1);
-        padding-left: 10px; /* Adjust margin if needed */
-    }
-    .button {
-        display: inline-flex;
-        align-items: center;
-        column-gap: .5rem;
-        background-color: var(--skin-color);
-        color: var(--title-color);
-        padding: 3rem 3rem;
-        padding-left: 50px;
-        border-radius: .25rem;
-        font-weight: var(--font-medium);
-        position: relative;
-        z-index: 1;
-    }
+.my__info{
+    display: flex;
+    column-gap: 1.8rem;
+    position: absolute;
+    left: 0;
+    bottom: 1.8rem;
 }
 
-.button {
+.info__item{
+    display: flex;
+    align-items: center;
+}
+
+.info__title,
+.info__subtitle{
+    font-size: var(--small-font-size);
+}
+
+.info__title{
+    font-weight: var(--font-medium);
+}
+
+.info__icon{
+    font-size: 1.8rem;
+    color: var(--skin-color);
+    margin-right: var(--mb-0-75);
+}
+
+.button{
     display: inline-flex;
     align-items: center;
-    column-gap: .5rem;
+    column-gap: 1rem;
     background-color: var(--skin-color);
     color: var(--title-color);
-    padding: .75rem 2rem;
+    padding: .75rem 1.4rem;
     border-radius: .25rem;
     font-weight: var(--font-medium);
     position: relative;
     z-index: 1;
 }
 
-.button::after {
+.button::after{
     position: absolute;
     content: '';
     left: 0;
@@ -490,67 +356,13 @@ input{
     transition: .3s;
 }
 
-.button:hover::after {
+.button:hover::after{
     transform: scale(1);
 }
 
-.button__icon {
+.button__icon{
     font-size: 1.25rem;
 }
-
-.my__info {
-    display: flex;
-    column-gap: 1.8rem;
-    position: absolute;
-    left: 0;
-    bottom: 1.5rem;
-    z-index: 6; /* Ensure it is above other elements */
-    background-color: none; /* Optional: Background to make icons stand out */
-}
-
-.info__item {
-    display: flex;
-    align-items: center;
-}
-
-.info__title,
-.info__subtitle {
-    font-size: var(--small-font-size);
-}
-
-.info__title {
-    font-weight: var(--font-medium);
-}
-
-.info__icon {
-    font-size: 1.8rem; /* Make sure the font-size is appropriate */
-    color: var(--skin-color); /* Ensure the color is set correctly */
-    margin-right: var(--mb-0-75); /* Ensure margin-right is not hiding the icon */
-}
-
-/* Responsive styles for portrait view on screens with a max width of 738px */
-@media (max-width: 738px) {
-    .my__info {
-        flex-direction: column; /* Stack items vertically */
-        align-items: flex-start; /* Align items to the start */
-        left:35%; /* Center align horizontally */
-        transform: translateX(-50%); /* Center align horizontally */
-        bottom: 1rem; /* Adjust bottom position for smaller screens */
-        column-gap: 0; /* Remove horizontal gap */
-        row-gap: 1rem; /* Add vertical gap between items */
-    }
-
-    .info__icon {
-        font-size: 1.5rem; /* Adjust font size for smaller screens */
-        margin-right: var(--mb-0-5); /* Adjust margin if needed */
-    }
-
-    .info__title,
-    .info__subtitle {
-        font-size: var(--smaller-font-size); /* Adjust font size for smaller screens */
-    }
-}
-
 /* start jelly animation*/
 /* jelly animation */
 
@@ -602,8 +414,9 @@ input{
 }
 
 .about__info{
+    display: grid;
     grid-template-columns: repeat(3, 140px);
-    column-gap: .5rem;
+    column-gap: 1rem;
     margin-bottom: var(--mb-3);
 }
 
@@ -719,13 +532,13 @@ input{
 .image-popup {
     position: fixed;
     top: 50%;
-    right: 100px;
+    right: 200px;
     transform: translateY(-50%);
     display: none;
 }
 
 .image-popup img {
-    max-width: 400px;
+    max-width: 300px;
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
 }
