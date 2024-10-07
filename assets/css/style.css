@@ -98,9 +98,6 @@ button{
     cursor: pointer;
 }
 
-/* Existing styles */
-
-
 button,
 input{
     border:none;
@@ -127,42 +124,6 @@ input{
     margin-bottom: var(--mb-3);
 }
 
-/* Parallax effect */
-.parallax {
-    background-attachment: scroll; /* Disable fixed background on small screens */
-}
-
-/* Responsive styles for mobile phones in portrait view */
-@media (max-width: 768px) {
-    .container {
-        max-width: 100%;
-        padding: 0 1rem;
-    }
-
-    .section {
-        padding: 2rem 0 1rem;
-    }
-
-    .section__title {
-        font-size: var(--h2-font-size);
-        margin-bottom: var(--mb-2);
-    }
-
-    .grid {
-        display: block;
-    }
-
-    button,
-    input {
-        width: 100%;
-        margin-bottom: 1rem;
-    }
-    /* Remove background image for smaller screens */
-    .parallax {
-        background-image: none;
-        background-attachment: scroll; /* Ensure background is not fixed */
-    }
-}
 .section__title::before{
     content: attr(data-heading);
     display: block;
@@ -310,18 +271,6 @@ input{
     z-index: 4;
 }
 
-/* Responsive styles for portrait view on screens with a max width of 738px */
-@media (max-width: 738px) {
-    .home {
-        background: linear-gradient(to bottom, #2b1055, #7597de); /* Keep the gradient background */
-    }
-
-    #stars, #moon, #mountains_behind, #mountains_front {
-        display: none; /* Hide the parallax elements */
-    }
-    
-}
-
 .home__data {
     margin-top: 10%;
     position: relative;
@@ -338,7 +287,7 @@ input{
     align-items: center;
 }
 
-.home__social {
+.home__social{
     position: absolute;
     top: 1rem;
     left: 0;
@@ -349,12 +298,12 @@ input{
     background: none;
 }
 
-.home__social-follow {
+.home__social-follow{
     font-weight: var(--font-medium);
     position: relative;
 }
 
-.home__social-follow::after {
+.home__social-follow::after{
     content: '';
     position: absolute;
     width: 1rem;
@@ -364,102 +313,41 @@ input{
     top: 50%;
 }
 
-.home__social-links {
+.home__social-links{
     display: inline-flex;
     column-gap: 1rem;
 }
 
-.home__social-link {
+.home__social-link{
     font-size: 1.08rem; /* Ensure the font size is appropriate */
     color: var(--text-color);
     transition: .3s;
     pointer-events: auto;
 }
 
-.home__social-link:hover {
+.home__social-link:hover{
     transform: translateY(.25rem);
-}
-
-/* Responsive styles for portrait view on screens with a max width of 738px */
-@media (max-width: 738px) {
-    .home__social {
-        top: 0.5rem; /* Adjust top position for smaller screens */
-        left: 50%; /* Center align horizontally */
-        transform: translateX(-50%); /* Center align horizontally */
-        flex-direction: row; /* Stack items vertically */
-        row-gap: 3rem; /* Add gap between items */
-        }
-
-    .home__social-follow::after {
-        right: -50%; /* Adjust position if needed */
-    }
-
-    .home__social-links {
-        flex-direction: row; /* Stack links vertically */
-        row-gap: 0.5rem; /* Add gap between links */
-        column-gap: 0; /* Remove horizontal gap */
-    }
-
-    .home__social-link {
-        font-size: 1rem; /* Adjust font size for smaller screens */
-    }
 }
 
 .home__img{
     display: none;
 }
 
-.home__title {
+.home__title{
     font-size: 4rem;
     font-weight: 5rem;
 }
 
-.home__subtitle {
+.home__subtitle{
     font-size: 2rem;
     font-weight: 3rem;
     margin-bottom: var(--mb-0-75);
 }
 
-.home__description {
+.home__description{
     max-width: 450px;
     font-weight: 3rem;
     margin-bottom: var(--mb-2);
-}
-
-/* Responsive styles for portrait view on screens with a max width of 738px */
-@media (max-width: 738px) {
-    .home__title {
-        font-size: 2.3rem; /* Adjust font size for smaller screens */
-        font-weight: 4rem;
-        padding-left: 10px; /* Adjust font weight if needed */
-    }
-
-    .home__subtitle {
-        font-size: 1.5rem; /* Adjust font size for smaller screens */
-        font-weight: 2.5rem; /* Adjust font weight if needed */
-        margin-bottom: var(--mb-0-5);
-        padding-left: 10px; /* Adjust margin if needed */
-    }
-
-    .home__description {
-        max-width: 100%; /* Make sure it fits within the screen */
-        font-weight: 2.5rem; /* Adjust font weight if needed */
-        margin-bottom: var(--mb-1);
-        padding-left: 10px; /* Adjust margin if needed */
-    }
-    .button {
-        display: inline-flex;
-        align-items: center;
-        column-gap: .5rem;
-        background-color: var(--skin-color);
-        color: var(--title-color);
-        padding: 3rem 3rem;
-        padding-left: 50px;
-        border-radius: .25rem;
-        font-weight: var(--font-medium);
-        position: relative;
-        z-index: 1;
-    }
 }
 
 .button {
@@ -508,6 +396,7 @@ input{
     background-color: none; /* Optional: Background to make icons stand out */
 }
 
+
 .info__item {
     display: flex;
     align-items: center;
@@ -526,29 +415,6 @@ input{
     font-size: 1.8rem; /* Make sure the font-size is appropriate */
     color: var(--skin-color); /* Ensure the color is set correctly */
     margin-right: var(--mb-0-75); /* Ensure margin-right is not hiding the icon */
-}
-
-/* Responsive styles for portrait view on screens with a max width of 738px */
-@media (max-width: 738px) {
-    .my__info {
-        flex-direction: column; /* Stack items vertically */
-        align-items: flex-start; /* Align items to the start */
-        left:35%; /* Center align horizontally */
-        transform: translateX(-50%); /* Center align horizontally */
-        bottom: 1rem; /* Adjust bottom position for smaller screens */
-        column-gap: 0; /* Remove horizontal gap */
-        row-gap: 1rem; /* Add vertical gap between items */
-    }
-
-    .info__icon {
-        font-size: 1.5rem; /* Adjust font size for smaller screens */
-        margin-right: var(--mb-0-5); /* Adjust margin if needed */
-    }
-
-    .info__title,
-    .info__subtitle {
-        font-size: var(--smaller-font-size); /* Adjust font size for smaller screens */
-    }
 }
 
 /* start jelly animation*/
